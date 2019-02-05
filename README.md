@@ -1,0 +1,2 @@
+# SmartGit
+learning git 
