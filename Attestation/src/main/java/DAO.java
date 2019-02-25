@@ -55,6 +55,10 @@ public class DAO {
         Query query = session.createQuery("from Teachers where first_name = :first_name");
         query.setParameter("first_name", first_name);
         List list = query.list();
+        if (list.size() == 0) {
+            return null;
+        }
+
         Teachers teacher = (Teachers)list.iterator().next();
         session.close();
         return teacher;

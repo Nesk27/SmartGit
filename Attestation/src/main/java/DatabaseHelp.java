@@ -68,11 +68,11 @@ public class DatabaseHelp {
             query.setParameter("log", login);
             List users = query.list();
             if (users.size() == 0) {
-                return "no data";
+                return "-1";
             }
 
             Users user = (Users)users.iterator().next();
-            return "Пароль: " + user.getPasswd();
+            return user.getPasswd();
 
 
         } catch (HibernateException ex)
